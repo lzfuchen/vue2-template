@@ -1,58 +1,16 @@
 {
-  "name": "vue-template",
+  "name": "vue2-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "dev": "",
+    "build": "",
+    "lint": ""
   },
-  "dependencies": {
-    "axios": "1.2.1",
-    "core-js": "3.8.3",
-    "element-ui": "2.15.12",
-    "js-cookie": "3.0.1",
-    "vue": "2.7.14",
-    "vue-router": "3.6.5",
-    "vuex": "3.6.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-plugin-unit-jest": "~5.0.0",
-    "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "@vue/test-utils": "^1.1.3",
-    "@vue/vue2-jest": "^27.0.0-alpha.2",
-    "babel-jest": "^27.0.6",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "jest": "^27.0.5",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
-    "stylelint": "^14.16.0",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-order": "^5.0.0",
-    "stylelint-scss": "^4.3.0",
-    "svg-sprite-loader": "^6.0.11",
-    "vue-template-compiler": "^2.7.14"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "engines": {
-    "node": ">=14",
-    "npm": ">= 6.0.0"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+    "node": ">=16",
+    "npm": ">= 8.0.0"
   }
 }
