@@ -17,26 +17,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '~@/assets/styles/variables';
+
 .app-main {
   position: relative;
   width: 100%;
 
   /* 50 = navbar  */
-  min-height: calc(100vh - 50px);
-  overflow: hidden;
-}
-
-.fixed-header + .app-main {
+  min-height: 100vh;
   padding-top: 50px;
-}
-</style>
-
-<style lang="scss">
-// fix css style bug in open el-dialog
-.el-popup-parent--hidden {
-  .fixed-header {
-    padding-right: 15px;
-  }
+  padding-left: $sideBarWidth;
+  overflow: hidden;
 }
 </style>
