@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import getters from './getters'
 Vue.use(Vuex)
 
 const context = require.context('./modules', true, /\.js$/)
@@ -13,6 +12,5 @@ const modules = context.keys().reduce((modules, modulePath) => {
 }, {})
 
 export default new Vuex.Store({
-  modules,
-  getters
+  modules
 })

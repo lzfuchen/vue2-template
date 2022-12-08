@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "",
-    "build": "",
-    "lint": ""
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.prod.js",
+    "lint": "npm run lint-eslint && npm run lint-style",
+    "lint-eslint": "eslint --config .eslintrc.js",
+    "lint-style": "stylelint --config .stylelintrc.js src/**/*.{less,css,scss,vue}"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
@@ -13,24 +15,41 @@
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-transform-runtime": "^7.19.6",
     "@babel/preset-env": "^7.20.2",
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.2",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.8.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ip": "^1.1.8",
+    "mini-css-extract-plugin": "^2.7.2",
     "postcss": "^8.4.19",
     "postcss-html": "^1.5.0",
     "postcss-loader": "^7.0.2",
     "postcss-scss": "^4.0.6",
     "prettier": "^2.8.0",
+    "style-loader": "^3.3.1",
     "stylelint": "^14.16.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-order": "^5.0.0",
-    "stylelint-scss": "^4.3.0"
+    "stylelint-scss": "^4.3.0",
+    "svg-sprite-loader": "^6.0.11",
+    "vue-loader": "^15.10.1",
+    "vue-template-compiler": "^2.7.14",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   },
   "engines": {
     "node": ">=16",
@@ -38,6 +57,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.6",
-    "core-js": "^3.26.1"
+    "core-js": "^3.26.1",
+    "vue": "^2.7.14",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
   }
 }
