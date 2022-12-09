@@ -47,7 +47,7 @@ module.exports = merge(webpackCommonConfig, {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"development"',
-        BASE_URL: '/'
+        BASE_URL: '"/"'
       }
     }),
     new HtmlWebpackPlugin({
