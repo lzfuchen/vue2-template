@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const webpackCommonConfig = require('./webpack.common')
-const { PROJECT_ROOT, PROJECT_NAME, DEFAULT_PORT, IP } = require('./utils/constants.js')
+const { PROJECT_ROOT, PROJECT_NAME, DEFAULT_PORT, IP, BASE_URL } = require('./utils/constants.js')
 
 module.exports = merge(webpackCommonConfig, {
   mode: 'development',
@@ -44,6 +44,12 @@ module.exports = merge(webpackCommonConfig, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"development"',
+        BASE_URL: '/'
+      }
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       templateParameters: {

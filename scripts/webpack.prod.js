@@ -8,21 +8,25 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpackCommonConfig = require('./webpack.common')
-const { PROJECT_NAME, ENABLE_ANALYZE, PROJECT_ROOT } = require('./utils/constants.js')
-
-const publicPath = '/'
+const { PROJECT_NAME, ENABLE_ANALYZE, PROJECT_ROOT, BASE_URL } = require('./utils/constants.js')
 
 module.exports = merge(webpackCommonConfig, {
   mode: 'production',
   devtool: 'hidden-source-map',
   output: {
     clean: true,
-    publicPath,
+    publicPath: BASE_URL,
     path: resolve(PROJECT_ROOT, './dist'),
     filename: 'js/[name].[contenthash:7].js',
     chunkFilename: 'js/async.[name].[contenthash:7].js'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"development"',
+        BASE_URL: `'${BASE_URL}'`
+      }
+    }),
     new MiniCssExtractPlugin({
       ignoreOrder: true, //在不同的js中引用多个相同的css时，引用先后顺序不一致会触发webpack警告，设置true忽略警告
       filename: 'css/[name].[contenthash:7].css',
@@ -31,7 +35,7 @@ module.exports = merge(webpackCommonConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       templateParameters: {
-        BASE_URL: publicPath
+        BASE_URL
       },
       template: resolve(PROJECT_ROOT, './public/index.html')
     }),
