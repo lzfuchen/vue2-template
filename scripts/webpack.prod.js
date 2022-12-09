@@ -31,7 +31,7 @@ module.exports = merge(webpackCommonConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       templateParameters: {
-        PUBLIC_PATH: publicPath
+        BASE_URL: publicPath
       },
       template: resolve(PROJECT_ROOT, './public/index.html')
     }),
