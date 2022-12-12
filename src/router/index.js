@@ -12,7 +12,12 @@ context
     allRoute = allRoute.concat(moduleRoutes)
   })
 
-export const constantRoutes = []
+export const constantRoutes = [
+  {
+    path: '/login',
+    component: () => import('@/views/login.vue')
+  }
+]
 
 allRoute = allRoute.concat(constantRoutes)
 
