@@ -9,6 +9,7 @@ const { PROJECT_ROOT, PROJECT_NAME, DEFAULT_PORT, IP, BASE_URL } = require('./ut
 
 module.exports = merge(webpackCommonConfig, {
   mode: 'development',
+  devtool: 'cheap-module-source-map',
   cache: {
     type: 'filesystem',
     buildDependencies: {
