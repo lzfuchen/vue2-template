@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          ...getCssLoaders(1),
+          ...getCssLoaders(2),
           {
             loader: 'sass-loader',
             options: { sourceMap: __DEV__ ? true : false }
@@ -47,7 +47,7 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          ...getCssLoaders(1),
+          ...getCssLoaders(2),
           {
             loader: 'less-loader',
             options: { sourceMap: __DEV__ ? true : false }
