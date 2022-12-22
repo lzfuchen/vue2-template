@@ -6,7 +6,7 @@ const getCssLoaders = require('./utils/getCssLoaders')
 
 module.exports = {
   context: PROJECT_ROOT,
-  entry: { app: [resolve(PROJECT_ROOT, './src/main.js')] },
+  entry: { app: resolve(PROJECT_ROOT, './src/main.js') },
   resolve: {
     extensions: ['.js', 'jsx', '.vue', '.json'],
     alias: {
