@@ -32,6 +32,7 @@ module.exports = merge(webpackCommonConfig, {
     host: '0.0.0.0',
     port: DEFAULT_PORT,
     historyApiFallback: true,
+    compress: true,
     hot: true,
     client: {
       logging: 'none',
@@ -40,11 +41,12 @@ module.exports = merge(webpackCommonConfig, {
       }
     },
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*',
+      'Access-Control-Allow-Headers': '*'
     }
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         BASE_URL: '"/"'
